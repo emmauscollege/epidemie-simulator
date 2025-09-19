@@ -1,8 +1,6 @@
-// Configuration of server image and settings in Codespaces
-// File format: https://aka.ms/devcontainer.json. 
 {
     "name": "Epidemiesimulator - p5js",
-	"image": "mcr.microsoft.com/devcontainers/ubuntu",
+	"image": "mcr.microsoft.com/devcontainers/universal:linux",
 	"forwardPorts": [
 		8080
 	],
