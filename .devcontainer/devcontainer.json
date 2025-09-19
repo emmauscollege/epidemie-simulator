@@ -1,0 +1,25 @@
+// Configuration of server image and settings in Codespaces
+// File format: https://aka.ms/devcontainer.json. 
+{
+    "name": "Epidemiesimulator - p5js",
+	"image": "mcr.microsoft.com/devcontainers/ubuntu",
+	"forwardPorts": [
+		8080
+	],
+	"portsAttributes": {
+		"8080": {
+			"label": "Webserver voor simulator",
+			"onAutoForward": "notify" 
+		}
+	},
+	"postStartCommand": "nohup bash -c 'npx --yes http-server -c-1 > .nohup_webserver.out 2>&1 & rm nohup.out &'", // start webserver without cache on port 8080 and leave it running in background
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"mathematic.vscode-pdf", // add viewer for pdf-files (this one supports vscode-web)
+				"ms-vsliveshare.vsliveshare", // add google-docs like typing in same file, click on live-share button in left icon pane
+				"mhutchie.git-graph" // add graphical viewer for branches and commits, click on button in Source-Code tab
+			]
+		}
+	}
+}
